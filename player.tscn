@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://04xwpohl7abm"]
+
+[ext_resource type="Script" path="res://moving.gd" id="1_802cf"]
+[ext_resource type="Texture2D" uid="uid://baa46jtdb5vfi" path="res://res/textures/rocket.png" id="2_rqsut"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_03sw1"]
+radius = 5.3
+height = 26.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8vxgl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rqsut")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_rqsut")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="player" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_802cf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CapsuleShape2D_03sw1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+position = Vector2(0.5, -0.125)
+sprite_frames = SubResource("SpriteFrames_8vxgl")
+animation = &"idle"
+
+[node name="Marker2D" type="Marker2D" parent="CharacterBody2D"]
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D/Marker2D"]
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
