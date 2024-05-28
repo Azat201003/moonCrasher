@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=3 uid="uid://ciswsg5ui4qbc"]
+
+[ext_resource type="Texture2D" uid="uid://s1edatvbsvdt" path="res://res/textures/moon1.png" id="1_3t8r0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ecwq3"]
+radius = 153.003
+
+[sub_resource type="Animation" id="Animation_puxi8"]
+resource_name = "moon"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="Animation" id="Animation_fc55q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7g7af"]
+_data = {
+"RESET": SubResource("Animation_fc55q"),
+"moon": SubResource("Animation_puxi8")
+}
+
+[node name="Node2D" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("CircleShape2D_ecwq3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="StaticBody2D"]
+root_node = NodePath("../Moon1")
+libraries = {
+"": SubResource("AnimationLibrary_7g7af")
+}
+autoplay = "moon"
+speed_scale = 0.01
+next/moon = &"moon"
+
+[node name="Moon1" type="Sprite2D" parent="StaticBody2D"]
+scale = Vector2(7, 7)
+texture = ExtResource("1_3t8r0")
