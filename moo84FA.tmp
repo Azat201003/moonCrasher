@@ -1,8 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://ciswsg5ui4qbc"]
+[gd_scene load_steps=13 format=3 uid="uid://ciswsg5ui4qbc"]
 
 [ext_resource type="Script" path="res://crashing.gd" id="1_0x1eq"]
 [ext_resource type="Texture2D" uid="uid://s1edatvbsvdt" path="res://res/textures/moon1.png" id="1_3t8r0"]
-[ext_resource type="Texture2D" uid="uid://dfopjrocrqo30" path="res://res/textures/moon1Crash.png" id="2_h5yy4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ecwq3"]
 radius = 213.059
@@ -44,30 +43,6 @@ _data = {
 "moon": SubResource("Animation_puxi8")
 }
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_18aml"]
-atlas = ExtResource("2_h5yy4")
-region = Rect2(0, 0, 128, 132)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0sfju"]
-atlas = ExtResource("2_h5yy4")
-region = Rect2(128, 0, 128, 132)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ljvrr"]
-atlas = ExtResource("2_h5yy4")
-region = Rect2(256, 0, 128, 132)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3p6jy"]
-atlas = ExtResource("2_h5yy4")
-region = Rect2(384, 0, 128, 132)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_giubs"]
-atlas = ExtResource("2_h5yy4")
-region = Rect2(512, 0, 128, 132)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6l2u8"]
-atlas = ExtResource("2_h5yy4")
-region = Rect2(640, 0, 128, 132)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_3r5p4"]
 atlas = ExtResource("1_3t8r0")
 region = Rect2(0, 0, 64, 66)
@@ -88,29 +63,6 @@ region = Rect2(192, 0, 64, 66)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_18aml")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0sfju")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ljvrr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3p6jy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_giubs")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6l2u8")
-}],
-"loop": false,
-"name": &"crashed",
-"speed": 6.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_3r5p4")
 }, {
 "duration": 1.0,
@@ -128,7 +80,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_idsld"]
-radius = 222.53
+radius = 241.671
 
 [node name="Node2D" type="Node2D"]
 
@@ -159,11 +111,11 @@ sprite_frames = SubResource("SpriteFrames_7ua33")
 animation = &"crashing"
 
 [node name="Area2D" type="Area2D" parent="StaticBody2D"]
-collision_layer = 2
+collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/Area2D"]
-position = Vector2(-1, 7.975)
+position = Vector2(-1, 2)
 shape = SubResource("CircleShape2D_idsld")
 debug_color = Color(0, 0.6, 0.701961, 0.113725)
 

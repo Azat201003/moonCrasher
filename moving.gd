@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 var speed = 0
+@export
 var _speed = 0
 
 var maxSpeed = 13
@@ -25,7 +26,7 @@ func _process(delta):
 	if _speed != 0: 
 		_speed -= 0.01 * (_speed / abs(_speed))
 	
-	speed = max(0,  _speed * _speed) ** 2
+	speed = max(0,  _speed ** 4)
 	if _speed != 0:
 		speed *= _speed / abs(_speed)
 	

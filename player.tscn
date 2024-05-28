@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://j0gnrft48dkt" path="res://res/textures/fireNone.png" id="5_v7edr"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_03sw1"]
-radius = 5.3
+radius = 5.0
 height = 26.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8vxgl"]
@@ -152,9 +152,15 @@ animations = [{
 [node name="player" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+visibility_layer = 3
+collision_layer = 3
+collision_mask = 3
+collision_priority = 2.0
+input_pickable = true
 script = ExtResource("1_802cf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0, 0.225)
 shape = SubResource("CapsuleShape2D_03sw1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
@@ -167,10 +173,10 @@ animation = &"idle"
 position_smoothing_enabled = true
 
 [node name="fire" type="AnimatedSprite2D" parent="CharacterBody2D"]
-position = Vector2(0, 17.5)
+position = Vector2(0, 16.5)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_uhysj")
-animation = &"none"
+animation = &"end"
 autoplay = "none"
 script = ExtResource("5_a1hbd")
 

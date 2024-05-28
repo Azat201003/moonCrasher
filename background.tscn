@@ -1,14 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://dnlu16qona5cx"]
+[gd_scene load_steps=4 format=3 uid="uid://pq3qpxnnm3tu"]
 
 [ext_resource type="Script" path="res://background.gd" id="1_jhorg"]
-[ext_resource type="Texture2D" uid="uid://dr3swa6pv8isa" path="res://res/textures/background.png" id="1_xytqw"]
 [ext_resource type="PackedScene" uid="uid://04xwpohl7abm" path="res://player.tscn" id="3_p4vx2"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yocaw"]
+load_path = "res://.godot/imported/background.png-c401a768a184dff395071cca676e38a3.ctex"
 
 [node name="background" type="Node2D"]
 script = ExtResource("1_jhorg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_xytqw")
+texture = SubResource("CompressedTexture2D_yocaw")
 
 [node name="player" parent="." instance=ExtResource("3_p4vx2")]
 visible = false
