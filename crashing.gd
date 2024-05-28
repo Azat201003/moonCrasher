@@ -21,7 +21,7 @@ func _process(delta):
 
 
 func _on_area_2d_body_entered(body):
-	hp = max(0, hp - abs(body.speed) / 200)
+	hp = max(0, hp - abs(body.speed) / 500)
 	$moon.frame = int((maxHP - hp) / (maxHP / 4))
 	if hp == 0:
 		$moon.play("crashed")# Add a timer to this node
