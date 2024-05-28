@@ -1,7 +1,7 @@
 [gd_scene load_steps=24 format=3 uid="uid://04xwpohl7abm"]
 
 [ext_resource type="Script" path="res://moving.gd" id="1_802cf"]
-[ext_resource type="Texture2D" uid="uid://baa46jtdb5vfi" path="res://res/textures/rocket.png" id="2_rqsut"]
+[ext_resource type="Texture2D" uid="uid://wfx67gg6e8iu" path="res://res/textures/rocket2.png" id="2_kfmku"]
 [ext_resource type="Texture2D" uid="uid://dwvrxu243cfck" path="res://res/textures/fireIdle.png" id="3_0cqtl"]
 [ext_resource type="Texture2D" uid="uid://biceo4j7nw7sn" path="res://res/textures/fireStart.png" id="4_qo1qm"]
 [ext_resource type="Script" path="res://fireAnimation.gd" id="5_a1hbd"]
@@ -15,10 +15,10 @@ height = 26.0
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_rqsut")
+"texture": ExtResource("2_kfmku")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_rqsut")
+"texture": ExtResource("2_kfmku")
 }],
 "loop": true,
 "name": &"idle",
