@@ -1,10 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://dp5krt0wujruy"]
+[gd_scene load_steps=4 format=3 uid="uid://dp5krt0wujruy"]
 
 [ext_resource type="PackedScene" uid="uid://04xwpohl7abm" path="res://player.tscn" id="1_8xyob"]
+[ext_resource type="PackedScene" uid="uid://dnlu16qona5cx" path="res://background.tscn" id="1_36od2"]
 [ext_resource type="PackedScene" uid="uid://ciswsg5ui4qbc" path="res://moon.tscn" id="3_mxunh"]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(578, 168)
+
+[node name="background" parent="." instance=ExtResource("1_36od2")]
+script = null
 
 [node name="player" parent="." instance=ExtResource("1_8xyob")]
 z_index = 1
