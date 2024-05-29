@@ -4,7 +4,8 @@ var speed = 0
 @export
 var _speed = 0
 
-var maxSpeed = 13
+var maxSpeed = 14
+var attack = 1./500.
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -18,9 +19,9 @@ func _process(delta):
 	if Input.is_action_pressed("ui_down"):
 		_speed -= 0.1
 	if Input.is_action_pressed("ui_right"):
-		rotation += 0.02
+		rotation += 0.04
 	if Input.is_action_pressed("ui_left"):
-		rotation -= 0.02
+		rotation -= 0.04
 	
 	_speed = max(min(_speed, maxSpeed), -maxSpeed)
 	if _speed != 0: 
@@ -37,3 +38,6 @@ func _process(delta):
 		$fire.start()
 	if Input.is_action_just_released("ui_up"):
 		$fire.end()
+
+func collide():
+	_speed = -1

@@ -1,11 +1,11 @@
 [gd_scene load_steps=20 format=3 uid="uid://ciswsg5ui4qbc"]
 
-[ext_resource type="Script" path="res://crashing.gd" id="1_0x1eq"]
 [ext_resource type="Texture2D" uid="uid://s1edatvbsvdt" path="res://res/textures/moon1.png" id="1_3t8r0"]
+[ext_resource type="Script" path="res://scripts/crashing.gd" id="1_od8w0"]
 [ext_resource type="Texture2D" uid="uid://dfopjrocrqo30" path="res://res/textures/moon1Crash.png" id="2_h5yy4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ecwq3"]
-radius = 213.059
+radius = 304.3
 
 [sub_resource type="Animation" id="Animation_fc55q"]
 length = 0.001
@@ -128,13 +128,13 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_idsld"]
-radius = 222.53
+radius = 325.0
 
 [node name="Node2D" type="Node2D"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 input_pickable = true
-script = ExtResource("1_0x1eq")
+script = ExtResource("1_od8w0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 light_mask = 4
@@ -154,13 +154,13 @@ speed_scale = 0.01
 next/moon = &"moon"
 
 [node name="moon" type="AnimatedSprite2D" parent="StaticBody2D"]
-scale = Vector2(7, 7)
+scale = Vector2(10, 10)
 sprite_frames = SubResource("SpriteFrames_7ua33")
 animation = &"crashing"
 
 [node name="Area2D" type="Area2D" parent="StaticBody2D"]
 collision_layer = 2
-collision_mask = 2
+collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/Area2D"]
 position = Vector2(-1, 7.975)

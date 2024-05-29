@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wfx67gg6e8iu"
-path="res://.godot/imported/rocket.png-e3c242c3815ab2f1ab3da64bc5e53cbc.ctex"
+uid="uid://bpxh007p745be"
+path="res://.godot/imported/weapon1_idle.png-dbca77b651cc8515144d5b90ba8221b2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://res/textures/rocket.png"
-dest_files=["res://.godot/imported/rocket.png-e3c242c3815ab2f1ab3da64bc5e53cbc.ctex"]
+source_file="res://res/textures/weapon1_idle.png"
+dest_files=["res://.godot/imported/weapon1_idle.png-dbca77b651cc8515144d5b90ba8221b2.ctex"]
 
 [params]
 

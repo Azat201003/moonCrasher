@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://dp5krt0wujruy"]
+
+[ext_resource type="PackedScene" uid="uid://04xwpohl7abm" path="res://scenes/player.tscn" id="1_8xyob"]
+[ext_resource type="PackedScene" uid="uid://e8kpp0vqpfnb" path="res://scenes/weapon_1.tscn" id="3_muc53"]
+[ext_resource type="PackedScene" uid="uid://ciswsg5ui4qbc" path="res://scenes/moon.tscn" id="3_mxunh"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource("1_8xyob")]
+z_index = 1
+scale = Vector2(3, 3)
+
+[node name="weapon1" parent="player" instance=ExtResource("3_muc53")]
+scale = Vector2(0.333333, 0.333333)
+
+[node name="moon1" parent="." instance=ExtResource("3_mxunh")]
+position = Vector2(704, 441)
+
+[node name="moon2" parent="." instance=ExtResource("3_mxunh")]
+position = Vector2(-437, -388)
+
+[node name="moon3" parent="." instance=ExtResource("3_mxunh")]
+position = Vector2(-703, 857)
+
+[node name="moon4" parent="." instance=ExtResource("3_mxunh")]
+position = Vector2(944, -524)
+
+[node name="bullets" type="Node2D" parent="."]

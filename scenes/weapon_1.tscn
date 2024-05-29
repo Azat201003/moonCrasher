@@ -1,0 +1,78 @@
+[gd_scene load_steps=11 format=3 uid="uid://e8kpp0vqpfnb"]
+
+[ext_resource type="Texture2D" uid="uid://pvujhvrhna02" path="res://res/textures/weapon1_shooting.png" id="1_lbkp1"]
+[ext_resource type="Script" path="res://scripts/shooting.gd" id="1_wpvrw"]
+[ext_resource type="Texture2D" uid="uid://bpxh007p745be" path="res://res/textures/weapon1_idle.png" id="2_u0hfk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_37ug4"]
+atlas = ExtResource("1_lbkp1")
+region = Rect2(0, 0, 19, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ymq5"]
+atlas = ExtResource("1_lbkp1")
+region = Rect2(19, 0, 19, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nysxk"]
+atlas = ExtResource("1_lbkp1")
+region = Rect2(38, 0, 19, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81pko"]
+atlas = ExtResource("1_lbkp1")
+region = Rect2(57, 0, 19, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dlqei"]
+atlas = ExtResource("2_u0hfk")
+region = Rect2(0, 0, 19, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bcthb"]
+atlas = ExtResource("2_u0hfk")
+region = Rect2(19, 0, 19, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q8jtt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_37ug4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ymq5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nysxk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_81pko")
+}],
+"loop": true,
+"name": &"fire",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dlqei")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bcthb")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}]
+
+[node name="weapon1" type="Node2D"]
+script = ExtResource("1_wpvrw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_q8jtt")
+animation = &"fire"
+autoplay = "idle"
+frame = 3
+frame_progress = 0.914996
+
+[node name="startBullet1" type="Node2D" parent="."]
+clip_children = 1
+position = Vector2(18, -25)
+
+[node name="startBullet2" type="Node2D" parent="."]
+position = Vector2(-18, -25)
