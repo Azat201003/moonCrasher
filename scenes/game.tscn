@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dp5krt0wujruy"]
+[gd_scene load_steps=5 format=3 uid="uid://dp5krt0wujruy"]
 
 [ext_resource type="PackedScene" uid="uid://04xwpohl7abm" path="res://scenes/player.tscn" id="1_8xyob"]
 [ext_resource type="PackedScene" uid="uid://e8kpp0vqpfnb" path="res://scenes/weapon_1.tscn" id="3_muc53"]
-[ext_resource type="PackedScene" uid="uid://ciswsg5ui4qbc" path="res://scenes/moon.tscn" id="3_mxunh"]
+[ext_resource type="PackedScene" uid="uid://ciswsg5ui4qbc" path="res://scenes/moon1.tscn" id="3_mxunh"]
+[ext_resource type="PackedScene" uid="uid://dwgp8qk11182" path="res://scenes/moon2.tscn" id="4_rwffc"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -14,7 +15,7 @@ scale = Vector2(3, 3)
 scale = Vector2(0.333333, 0.333333)
 
 [node name="moon1" parent="." instance=ExtResource("3_mxunh")]
-position = Vector2(704, 441)
+position = Vector2(1796, 294)
 
 [node name="moon2" parent="." instance=ExtResource("3_mxunh")]
 position = Vector2(-437, -388)
@@ -22,7 +23,13 @@ position = Vector2(-437, -388)
 [node name="moon3" parent="." instance=ExtResource("3_mxunh")]
 position = Vector2(-703, 857)
 
-[node name="moon4" parent="." instance=ExtResource("3_mxunh")]
-position = Vector2(944, -524)
+[node name="moon4" parent="." instance=ExtResource("4_rwffc")]
+position = Vector2(748, -411)
+
+[node name="moon5" parent="." instance=ExtResource("4_rwffc")]
+position = Vector2(-1128, 281)
+
+[node name="moon6" parent="." instance=ExtResource("4_rwffc")]
+position = Vector2(697, 1275)
 
 [node name="bullets" type="Node2D" parent="."]
