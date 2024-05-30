@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://d0jjfhqmc7m32"]
+
+[ext_resource type="FontFile" uid="uid://b5taytemoi3i6" path="res://res/fonts/KodeMono-Regular.ttf" id="1_5ttrt"]
+
+[resource]
+font = ExtResource("1_5ttrt")
+font_size = 80

@@ -1,0 +1,275 @@
+[gd_scene load_steps=15 format=3 uid="uid://vg4bnygm7hib"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_8q5jk"]
+[ext_resource type="Texture2D" uid="uid://wfx67gg6e8iu" path="res://res/textures/rocket.png" id="1_s6yeg"]
+[ext_resource type="Texture2D" uid="uid://bh6nrjsoia74r" path="res://res/textures/fireIdle — копия.png" id="2_wvtoj"]
+[ext_resource type="Texture2D" uid="uid://dnbs7gtnp3doq" path="res://res/textures/moon1 — копия.png" id="3_6vhae"]
+[ext_resource type="FontFile" uid="uid://dpvca5mkldnsv" path="res://res/fonts/Oswald-Bold.ttf" id="4_34aod"]
+[ext_resource type="LabelSettings" uid="uid://urkf6g8scxy2" path="res://label_settings/button1.tres" id="6_hljqh"]
+[ext_resource type="LabelSettings" uid="uid://cle0slyegi68n" path="res://label_settings/button2.tres" id="7_2r14r"]
+[ext_resource type="LabelSettings" uid="uid://ylcorf1ega78" path="res://label_settings/button3.tres" id="8_aukyc"]
+[ext_resource type="LabelSettings" uid="uid://d0jjfhqmc7m32" path="res://label_settings/button4.tres" id="9_2ixjt"]
+[ext_resource type="LabelSettings" uid="uid://waugqpyi7hj7" path="res://label_settings/bigsett.tres" id="10_0baec"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_p7xwf"]
+line_spacing = 0.0
+font = ExtResource("4_34aod")
+font_size = 180
+font_color = Color(1, 1, 1, 0)
+outline_size = 15
+outline_color = Color(0.694118, 0.286275, 0.678431, 1)
+
+[sub_resource type="Animation" id="Animation_psufl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("moon:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_j48mj"]
+resource_name = "moon"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("moon:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [6.28319, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fdw2m"]
+_data = {
+"RESET": SubResource("Animation_psufl"),
+"moon": SubResource("Animation_j48mj")
+}
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchor_right = 1.667
+anchor_bottom = 1.667
+offset_right = -0.384033
+offset_bottom = -0.216064
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8q5jk")
+
+[node name="background" type="ColorRect" parent="."]
+z_index = -2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.054902, 0.0862745, 0.243137, 1)
+
+[node name="rocket" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1033.0
+offset_top = 732.0
+offset_right = 1375.0
+offset_bottom = 1182.0
+rotation = -1.21649
+texture = ExtResource("1_s6yeg")
+
+[node name="fire" type="TextureRect" parent="."]
+z_index = -1
+layout_mode = 0
+offset_left = 1428.0
+offset_top = 890.0
+offset_right = 1770.0
+offset_bottom = 1232.0
+rotation = -1.21649
+texture = ExtResource("2_wvtoj")
+
+[node name="moon" type="TextureRect" parent="."]
+z_index = -1
+layout_mode = 1
+offset_left = 295.0
+offset_top = 229.0
+offset_right = 637.0
+offset_bottom = 571.0
+pivot_offset = Vector2(171, 171)
+texture = ExtResource("3_6vhae")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -960.0
+offset_right = 141.0
+offset_bottom = 360.0
+grow_horizontal = 2
+text = "Moon Crasher"
+label_settings = SubResource("LabelSettings_p7xwf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.192
+anchor_top = -0.523
+anchor_right = 0.192
+anchor_bottom = -0.523
+offset_left = 109.36
+offset_top = 1166.84
+offset_right = 404.36
+offset_bottom = 1300.84
+grow_horizontal = 2
+grow_vertical = 2
+text = "сюжет"
+label_settings = ExtResource("6_hljqh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.192
+anchor_top = -0.523
+anchor_right = 0.192
+anchor_bottom = -0.523
+offset_left = 125.36
+offset_top = 1292.84
+offset_right = 531.36
+offset_bottom = 1426.84
+grow_horizontal = 2
+grow_vertical = 2
+text = "казуальная"
+label_settings = ExtResource("7_2r14r")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.192
+anchor_top = -0.523
+anchor_right = 0.192
+anchor_bottom = -0.523
+offset_left = 132.472
+offset_top = 1409.84
+offset_right = 515.472
+offset_bottom = 1543.84
+grow_horizontal = 2
+grow_vertical = 2
+text = "настройки"
+label_settings = ExtResource("8_aukyc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.192
+anchor_top = -0.523
+anchor_right = 0.192
+anchor_bottom = -0.523
+offset_left = 147.36
+offset_top = 1524.01
+offset_right = 371.36
+offset_bottom = 1632.01
+grow_horizontal = 2
+grow_vertical = 2
+text = "выйти"
+label_settings = ExtResource("9_2ixjt")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label6" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.192
+anchor_top = -0.523
+anchor_right = 0.192
+anchor_bottom = -0.523
+offset_left = 109.36
+offset_top = 1166.84
+offset_right = 404.36
+offset_bottom = 1300.84
+grow_horizontal = 2
+grow_vertical = 2
+text = "сюжет"
+label_settings = ExtResource("10_0baec")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label7" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.192
+anchor_top = -0.523
+anchor_right = 0.192
+anchor_bottom = -0.523
+offset_left = 125.36
+offset_top = 1292.84
+offset_right = 531.36
+offset_bottom = 1426.84
+grow_horizontal = 2
+grow_vertical = 2
+text = "казуальная"
+label_settings = ExtResource("10_0baec")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label8" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.192
+anchor_top = -0.523
+anchor_right = 0.192
+anchor_bottom = -0.523
+offset_left = 132.472
+offset_top = 1409.84
+offset_right = 515.472
+offset_bottom = 1543.84
+grow_horizontal = 2
+grow_vertical = 2
+text = "настройки"
+label_settings = ExtResource("10_0baec")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label9" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.192
+anchor_top = -0.523
+anchor_right = 0.192
+anchor_bottom = -0.523
+offset_left = 147.36
+offset_top = 1524.01
+offset_right = 371.36
+offset_bottom = 1632.01
+grow_horizontal = 2
+grow_vertical = 2
+text = "выйти"
+label_settings = ExtResource("10_0baec")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_fdw2m")
+}
+autoplay = "moon"
+speed_scale = 0.01

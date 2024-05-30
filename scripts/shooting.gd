@@ -19,7 +19,6 @@ func shoot():
 	instanceBullet.rotation = rotation
 	instanceBullet.position = bulletSpawns[indexSpawn].global_position
 	instanceBullet.speed = bulletSpeed
-	print(bulletSpawns[indexSpawn].position + position)
 	instanceBullet.velocity = Vector2(0, -1).rotated(rotation) * bulletSpeed
 	get_parent().get_parent().get_node("bullets").add_child(instanceBullet)
 	indexSpawn += 1
