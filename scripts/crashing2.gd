@@ -1,7 +1,7 @@
 extends Node2D
 
-var hp = 200
-var maxHP = 200
+var hp = 450
+var maxHP = 500
 var isDie = false
 
 var timer = Timer.new()
@@ -21,6 +21,7 @@ func _on_area_2d_body_entered(body):
 		$moon.frame = int((maxHP - hp) / (maxHP / 4.))
 		if hp == 0:
 			isDie = true
+			$CollisionShape2D.queue_free()
 			$moon.play("crashed")# Add a timer to this node
 			timer.set_wait_time(1)
 			timer.start()

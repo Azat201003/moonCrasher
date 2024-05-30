@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://e8kpp0vqpfnb"]
 
 [ext_resource type="Texture2D" uid="uid://pvujhvrhna02" path="res://res/textures/weapon1_shooting.png" id="1_lbkp1"]
-[ext_resource type="Script" path="res://scripts/shooting.gd" id="1_wpvrw"]
+[ext_resource type="Script" path="res://scripts/shooting1.gd" id="1_wpvrw"]
 [ext_resource type="Texture2D" uid="uid://bpxh007p745be" path="res://res/textures/weapon1_idle.png" id="2_u0hfk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_37ug4"]
@@ -63,7 +63,6 @@ animations = [{
 script = ExtResource("1_wpvrw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_q8jtt")
 animation = &"fire"
 autoplay = "idle"
@@ -72,7 +71,7 @@ frame_progress = 0.914996
 
 [node name="startBullet1" type="Node2D" parent="."]
 clip_children = 1
-position = Vector2(18, -25)
+position = Vector2(6, -8)
 
 [node name="startBullet2" type="Node2D" parent="."]
-position = Vector2(-18, -25)
+position = Vector2(-6, -8)

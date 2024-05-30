@@ -1,7 +1,7 @@
 [gd_scene load_steps=20 format=3 uid="uid://ciswsg5ui4qbc"]
 
 [ext_resource type="Texture2D" uid="uid://s1edatvbsvdt" path="res://res/textures/moon1.png" id="1_3t8r0"]
-[ext_resource type="Script" path="res://scripts/crashing.gd" id="1_od8w0"]
+[ext_resource type="Script" path="res://scripts/crashing1.gd" id="1_d0rlt"]
 [ext_resource type="Texture2D" uid="uid://dfopjrocrqo30" path="res://res/textures/moon1Crash.png" id="2_h5yy4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ecwq3"]
@@ -134,7 +134,7 @@ radius = 325.0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 input_pickable = true
-script = ExtResource("1_od8w0")
+script = ExtResource("1_d0rlt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 light_mask = 4

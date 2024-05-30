@@ -10,7 +10,7 @@ var isRechange = false
 func _ready():
 	add_child(timer)
 	timer.connect("timeout", shoot)
-	bulletScene = load("res://scenes/bullet.tscn")
+	bulletScene = load("res://scenes/bullet1.tscn")
 
 func shoot():
 	print("shoot")
@@ -26,14 +26,20 @@ func shoot():
 	isRechange = false
 	timer.stop()
 
+func idleAnim():
+	$AnimatedSprite2D.play("idle")
+	timer.disconnect("timeout", idleAnim)
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	rotation = get_parent().get_child(0).rotation
 	position = get_parent().get_child(0).position
 	if Input.is_action_just_pressed("ui_shooting"):
 		$AnimatedSprite2D.play("fire")
+		if indexSpawn == 0:
+			$AnimatedSprite2D.frame = 2
 	if Input.is_action_just_released("ui_shooting"):
-		$AnimatedSprite2D.play("idle")
+		timer.connect("timeout", idleAnim)
 	if Input.is_action_pressed("ui_shooting") and !isRechange:
 		timer.set_wait_time(0.2)
 		timer.start()

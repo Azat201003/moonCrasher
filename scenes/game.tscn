@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://04xwpohl7abm" path="res://scenes/player.tscn" id="1_8xyob"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_p0y57"]
-[ext_resource type="PackedScene" uid="uid://e8kpp0vqpfnb" path="res://scenes/weapon_1.tscn" id="3_muc53"]
 [ext_resource type="PackedScene" uid="uid://ciswsg5ui4qbc" path="res://scenes/moon1.tscn" id="3_mxunh"]
+[ext_resource type="PackedScene" uid="uid://2vt7y5yu8jxx" path="res://scenes/weapon_2.tscn" id="3_xlajd"]
 [ext_resource type="PackedScene" uid="uid://dwgp8qk11182" path="res://scenes/moon2.tscn" id="4_rwffc"]
 
 [node name="Node2D" type="Node2D"]
@@ -13,8 +13,7 @@ script = ExtResource("1_p0y57")
 z_index = 1
 scale = Vector2(3, 3)
 
-[node name="weapon1" parent="player" instance=ExtResource("3_muc53")]
-scale = Vector2(0.333333, 0.333333)
+[node name="weapon2" parent="player" instance=ExtResource("3_xlajd")]
 
 [node name="moon1" parent="." instance=ExtResource("3_mxunh")]
 position = Vector2(1796, 294)
