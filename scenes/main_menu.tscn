@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://vg4bnygm7hib"]
+[gd_scene load_steps=16 format=3 uid="uid://vg4bnygm7hib"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_8q5jk"]
 [ext_resource type="Texture2D" uid="uid://wfx67gg6e8iu" path="res://res/textures/rocket.png" id="1_s6yeg"]
@@ -50,10 +50,29 @@ tracks/0/keys = {
 "values": [6.28319, 0.0]
 }
 
+[sub_resource type="Animation" id="Animation_xboq7"]
+resource_name = "rocket"
+length = 0.01
+loop_mode = 1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("rocket:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.001, 0.002, 0.00304687, 0.00402344, 0.005, 0.00603906, 0.007, 0.008, 0.00902344),
+"transitions": PackedFloat32Array(1e-05, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(1033, 732), Vector2(1036.88, 735.225), Vector2(1027.64, 733.23), Vector2(1043.38, 724.8), Vector2(1027.78, 723.09), Vector2(1043.69, 742.485), Vector2(1031.33, 734.085), Vector2(1035.62, 729.795), Vector2(1045.12, 722.035), Vector2(1028.78, 735.26)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fdw2m"]
 _data = {
 "RESET": SubResource("Animation_psufl"),
-"moon": SubResource("Animation_j48mj")
+"moon": SubResource("Animation_j48mj"),
+"rocket": SubResource("Animation_xboq7")
 }
 
 [node name="MainMenu" type="Control"]
@@ -126,13 +145,13 @@ anchor_left = 0.192
 anchor_top = -0.523
 anchor_right = 0.192
 anchor_bottom = -0.523
-offset_left = 109.36
-offset_top = 1166.84
-offset_right = 404.36
-offset_bottom = 1300.84
+offset_left = 46.36
+offset_top = 1211.84
+offset_right = 341.36
+offset_bottom = 1345.84
 grow_horizontal = 2
 grow_vertical = 2
-text = "сюжет"
+text = "Сюжет"
 label_settings = ExtResource("6_hljqh")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -144,13 +163,13 @@ anchor_left = 0.192
 anchor_top = -0.523
 anchor_right = 0.192
 anchor_bottom = -0.523
-offset_left = 125.36
-offset_top = 1292.84
-offset_right = 531.36
-offset_bottom = 1426.84
+offset_left = -3.64001
+offset_top = 1317.84
+offset_right = 402.36
+offset_bottom = 1451.84
 grow_horizontal = 2
 grow_vertical = 2
-text = "казуальная"
+text = "Аркада"
 label_settings = ExtResource("7_2r14r")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -162,13 +181,13 @@ anchor_left = 0.192
 anchor_top = -0.523
 anchor_right = 0.192
 anchor_bottom = -0.523
-offset_left = 132.472
-offset_top = 1409.84
-offset_right = 515.472
-offset_bottom = 1543.84
+offset_left = 8.35999
+offset_top = 1410.84
+offset_right = 391.36
+offset_bottom = 1544.84
 grow_horizontal = 2
 grow_vertical = 2
-text = "настройки"
+text = "Опции"
 label_settings = ExtResource("8_aukyc")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -180,13 +199,13 @@ anchor_left = 0.192
 anchor_top = -0.523
 anchor_right = 0.192
 anchor_bottom = -0.523
-offset_left = 147.36
-offset_top = 1524.01
-offset_right = 371.36
-offset_bottom = 1632.01
+offset_left = 89.36
+offset_top = 1525.84
+offset_right = 313.36
+offset_bottom = 1633.84
 grow_horizontal = 2
 grow_vertical = 2
-text = "выйти"
+text = "Выйти"
 label_settings = ExtResource("9_2ixjt")
 horizontal_alignment = 1
 vertical_alignment = 1
