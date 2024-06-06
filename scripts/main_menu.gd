@@ -47,3 +47,19 @@ func _process(delta):
 		else:
 			labels[i].visible = true
 			labels2[i].visible = false
+
+
+func _on_label_2_button_up():
+	get_tree().change_scene_to_file("scenes/levels.tscn")
+
+
+func _on_label_3_button_up():
+	get_tree().change_scene_to_file("scenes/person.tscn")
+
+
+func _on_label_4_button_up():
+	get_tree().change_scene_to_file("scenes/settings.tscn")
+
+
+func _on_label_5_button_up():
+	get_tree().quit()

@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dj1ro8ijtdkek"]
+
+[ext_resource type="FontFile" uid="uid://b5taytemoi3i6" path="res://res/fonts/KodeMono-Regular.ttf" id="1_obasi"]
+
+[resource]
+default_font = ExtResource("1_obasi")
+default_font_size = 80
