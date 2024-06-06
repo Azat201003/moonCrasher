@@ -1,14 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://vg4bnygm7hib"]
+[gd_scene load_steps=13 format=3 uid="uid://vg4bnygm7hib"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_8q5jk"]
 [ext_resource type="Texture2D" uid="uid://wfx67gg6e8iu" path="res://res/textures/rocket.png" id="1_s6yeg"]
 [ext_resource type="Texture2D" uid="uid://bh6nrjsoia74r" path="res://res/textures/fireIdle — копия.png" id="2_wvtoj"]
 [ext_resource type="Texture2D" uid="uid://dnbs7gtnp3doq" path="res://res/textures/moon1 — копия.png" id="3_6vhae"]
 [ext_resource type="FontFile" uid="uid://dpvca5mkldnsv" path="res://res/fonts/Oswald-Bold.ttf" id="4_34aod"]
-[ext_resource type="LabelSettings" uid="uid://urkf6g8scxy2" path="res://label_settings/button1.tres" id="6_hljqh"]
-[ext_resource type="LabelSettings" uid="uid://cle0slyegi68n" path="res://label_settings/button2.tres" id="7_2r14r"]
-[ext_resource type="LabelSettings" uid="uid://ylcorf1ega78" path="res://label_settings/button3.tres" id="8_aukyc"]
-[ext_resource type="LabelSettings" uid="uid://d0jjfhqmc7m32" path="res://label_settings/button4.tres" id="9_2ixjt"]
+[ext_resource type="LabelSettings" uid="uid://urkf6g8scxy2" path="res://label_settings/button.tres" id="6_hljqh"]
 [ext_resource type="LabelSettings" uid="uid://waugqpyi7hj7" path="res://label_settings/bigsett.tres" id="10_0baec"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_p7xwf"]
@@ -77,12 +74,13 @@ _data = {
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
-anchor_right = 1.667
-anchor_bottom = 1.667
-offset_right = -0.384033
-offset_bottom = -0.216064
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_8q5jk")
 
 [node name="background" type="ColorRect" parent="."]
@@ -97,10 +95,10 @@ color = Color(0.054902, 0.0862745, 0.243137, 1)
 
 [node name="rocket" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 1033.0
-offset_top = 732.0
-offset_right = 1375.0
-offset_bottom = 1182.0
+offset_left = 1031.33
+offset_top = 734.085
+offset_right = 1373.33
+offset_bottom = 1184.11
 rotation = -1.21649
 texture = ExtResource("1_s6yeg")
 
@@ -129,9 +127,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -960.0
-offset_right = 141.0
-offset_bottom = 360.0
+offset_left = -304.0
+offset_top = 36.0
+offset_right = 797.0
+offset_bottom = 396.0
 grow_horizontal = 2
 text = "Moon Crasher"
 label_settings = SubResource("LabelSettings_p7xwf")
@@ -139,156 +138,100 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.192
-anchor_top = -0.523
-anchor_right = 0.192
-anchor_bottom = -0.523
-offset_left = 46.36
-offset_top = 1211.84
-offset_right = 341.36
-offset_bottom = 1345.84
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 0
+offset_left = 440.0
+offset_top = 545.0
+offset_right = 823.0
+offset_bottom = 679.0
 text = "Сюжет"
 label_settings = ExtResource("6_hljqh")
-horizontal_alignment = 1
-vertical_alignment = 1
+vertical_alignment = 2
 
 [node name="Label3" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.192
-anchor_top = -0.523
-anchor_right = 0.192
-anchor_bottom = -0.523
-offset_left = -3.64001
-offset_top = 1317.84
-offset_right = 402.36
-offset_bottom = 1451.84
-grow_horizontal = 2
-grow_vertical = 2
-text = "Аркада"
-label_settings = ExtResource("7_2r14r")
-horizontal_alignment = 1
-vertical_alignment = 1
+layout_mode = 0
+offset_left = 440.0
+offset_top = 639.0
+offset_right = 826.0
+offset_bottom = 773.0
+text = "Казуальная"
+label_settings = ExtResource("6_hljqh")
+vertical_alignment = 2
 
 [node name="Label4" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.192
-anchor_top = -0.523
-anchor_right = 0.192
-anchor_bottom = -0.523
-offset_left = 8.35999
-offset_top = 1410.84
-offset_right = 391.36
-offset_bottom = 1544.84
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 0
+offset_left = 440.0
+offset_top = 733.0
+offset_right = 823.0
+offset_bottom = 867.0
 text = "Опции"
-label_settings = ExtResource("8_aukyc")
-horizontal_alignment = 1
-vertical_alignment = 1
+label_settings = ExtResource("6_hljqh")
+vertical_alignment = 2
 
 [node name="Label5" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.192
-anchor_top = -0.523
-anchor_right = 0.192
-anchor_bottom = -0.523
-offset_left = 89.36
-offset_top = 1525.84
-offset_right = 313.36
-offset_bottom = 1633.84
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 0
+offset_left = 440.0
+offset_top = 827.0
+offset_right = 823.0
+offset_bottom = 961.0
 text = "Выйти"
-label_settings = ExtResource("9_2ixjt")
-horizontal_alignment = 1
-vertical_alignment = 1
+label_settings = ExtResource("6_hljqh")
+vertical_alignment = 2
 
 [node name="Label6" type="Label" parent="."]
 visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.192
-anchor_top = -0.523
-anchor_right = 0.192
-anchor_bottom = -0.523
-offset_left = 109.36
-offset_top = 1166.84
-offset_right = 404.36
-offset_bottom = 1300.84
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 0
+offset_left = 459.0
+offset_top = 522.0
+offset_right = 754.0
+offset_bottom = 656.0
 text = "сюжет"
 label_settings = ExtResource("10_0baec")
-horizontal_alignment = 1
-vertical_alignment = 1
+vertical_alignment = 2
 
 [node name="Label7" type="Label" parent="."]
 visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.192
-anchor_top = -0.523
-anchor_right = 0.192
-anchor_bottom = -0.523
-offset_left = 125.36
-offset_top = 1292.84
-offset_right = 531.36
-offset_bottom = 1426.84
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 0
+offset_left = 515.0
+offset_top = 631.0
+offset_right = 989.0
+offset_bottom = 765.0
 text = "казуальная"
 label_settings = ExtResource("10_0baec")
-horizontal_alignment = 1
-vertical_alignment = 1
+vertical_alignment = 2
 
 [node name="Label8" type="Label" parent="."]
 visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.192
-anchor_top = -0.523
-anchor_right = 0.192
-anchor_bottom = -0.523
-offset_left = 132.472
-offset_top = 1409.84
-offset_right = 515.472
-offset_bottom = 1543.84
-grow_horizontal = 2
-grow_vertical = 2
-text = "настройки"
+layout_mode = 0
+offset_left = 483.0
+offset_top = 766.0
+offset_right = 925.0
+offset_bottom = 900.0
+text = "опции"
 label_settings = ExtResource("10_0baec")
-horizontal_alignment = 1
-vertical_alignment = 1
+vertical_alignment = 2
+justification_flags = 162
 
 [node name="Label9" type="Label" parent="."]
 visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.192
-anchor_top = -0.523
-anchor_right = 0.192
-anchor_bottom = -0.523
-offset_left = 147.36
-offset_top = 1524.01
-offset_right = 371.36
-offset_bottom = 1632.01
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 0
+offset_left = 507.0
+offset_top = 882.0
+offset_right = 769.0
+offset_bottom = 1010.0
 text = "выйти"
 label_settings = ExtResource("10_0baec")
-horizontal_alignment = 1
-vertical_alignment = 1
+vertical_alignment = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_fdw2m")
 }
 autoplay = "moon"
+speed_scale = 0.01
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_fdw2m")
+}
+autoplay = "rocket"
 speed_scale = 0.01

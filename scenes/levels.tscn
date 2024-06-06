@@ -1,14 +1,36 @@
-[gd_scene format=3 uid="uid://bw5vcy0w8uh76"]
+[gd_scene load_steps=11 format=3 uid="uid://bw5vcy0w8uh76"]
+
+[ext_resource type="LabelSettings" uid="uid://c7sdhronqdi0j" path="res://label_settings/base.tres" id="1_ngaig"]
+[ext_resource type="Script" path="res://scripts/levels.gd" id="1_wfih3"]
+[ext_resource type="Texture2D" uid="uid://ddntwnj0bvx4" path="res://res/textures/arrow.png" id="2_587cl"]
+[ext_resource type="FontFile" uid="uid://b5taytemoi3i6" path="res://res/fonts/KodeMono-Regular.ttf" id="3_mm2g8"]
+[ext_resource type="Texture2D" uid="uid://cilpiayvy8lbo" path="res://res/textures/level1Icon.png" id="5_y2yn7"]
+
+[sub_resource type="Theme" id="Theme_ou4xt"]
+default_font = ExtResource("3_mm2g8")
+default_font_size = 53
+Button/colors/icon_normal_color = Color(0.121569, 0.168627, 0.411765, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xp1u0"]
+bg_color = Color(0.121569, 0.168627, 0.411765, 1)
+
+[sub_resource type="InputEventKey" id="InputEventKey_eljaf"]
+pressed = true
+keycode = 4194309
+
+[sub_resource type="Shortcut" id="Shortcut_t28s7"]
+events = [SubResource("InputEventKey_eljaf")]
+
+[sub_resource type="ImageTexture" id="ImageTexture_vh6h7"]
 
 [node name="Levels" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 768.0
-offset_bottom = 432.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_wfih3")
 
 [node name="background" type="ColorRect" parent="."]
 z_index = -2
@@ -19,3 +41,117 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.054902, 0.0862745, 0.243137, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -215.0
+offset_top = 120.0
+offset_right = 215.0
+offset_bottom = 188.0
+grow_horizontal = 2
+text = "выберете уровень"
+label_settings = ExtResource("1_ngaig")
+
+[node name="levelName" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -112.0
+offset_top = 250.0
+offset_right = 112.0
+offset_bottom = 318.0
+grow_horizontal = 2
+text = "Level 1"
+label_settings = ExtResource("1_ngaig")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="arrowLeft" type="Button" parent="levelName"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -73.0
+offset_top = -33.5
+offset_right = -20.0
+offset_bottom = 33.5
+grow_vertical = 2
+icon = ExtResource("2_587cl")
+
+[node name="arrowRight" type="Button" parent="levelName"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 65.0
+offset_top = -37.5
+offset_right = 126.0
+offset_bottom = 37.5
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(-1, 1)
+icon = ExtResource("2_587cl")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.0
+offset_top = 373.0
+offset_right = 150.0
+offset_bottom = 463.0
+grow_horizontal = 2
+pivot_offset = Vector2(150, 0)
+theme = SubResource("Theme_ou4xt")
+theme_override_colors/icon_normal_color = Color(0.121569, 0.168627, 0.411765, 1)
+theme_override_colors/icon_pressed_color = Color(0.121569, 0.168627, 0.411765, 1)
+theme_override_colors/icon_hover_color = Color(0.121569, 0.168627, 0.411765, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.121569, 0.168627, 0.411765, 1)
+theme_override_colors/icon_focus_color = Color(0.121569, 0.168627, 0.411765, 1)
+theme_override_colors/icon_disabled_color = Color(0.121569, 0.168627, 0.411765, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_xp1u0")
+shortcut = SubResource("Shortcut_t28s7")
+text = "запуск"
+icon = SubResource("ImageTexture_vh6h7")
+
+[node name="levelIcon" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = 9.0
+offset_right = 400.0
+offset_bottom = 474.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(400, 230)
+texture = ExtResource("5_y2yn7")
+
+[node name="levelIcon2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = 11.5
+offset_right = 400.0
+offset_bottom = 471.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(400, 230)
+
+[connection signal="button_up" from="levelName/arrowLeft" to="." method="_on_arrow_left_button_up"]
+[connection signal="button_up" from="levelName/arrowRight" to="." method="_on_arrow_right_button_up"]
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
