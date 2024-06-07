@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://04xwpohl7abm"]
+[gd_scene load_steps=25 format=3 uid="uid://04xwpohl7abm"]
 
 [ext_resource type="Script" path="res://scripts/moving.gd" id="1_k0rg3"]
 [ext_resource type="Texture2D" uid="uid://wfx67gg6e8iu" path="res://res/textures/rocket.png" id="2_kfmku"]
@@ -149,6 +149,9 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_u5cly"]
+radius = 9.05539
+
 [node name="player" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
@@ -180,5 +183,55 @@ sprite_frames = SubResource("SpriteFrames_uhysj")
 animation = &"end"
 autoplay = "none"
 script = ExtResource("6_d8x24")
+
+[node name="points" type="Node2D" parent="."]
+
+[node name="point1" type="Area2D" parent="points"]
+position = Vector2(30, -10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="points/point1"]
+shape = SubResource("CircleShape2D_u5cly")
+
+[node name="point2" type="Area2D" parent="points"]
+position = Vector2(14, -21)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="points/point2"]
+shape = SubResource("CircleShape2D_u5cly")
+
+[node name="point3" type="Area2D" parent="points"]
+position = Vector2(-15, -23)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="points/point3"]
+shape = SubResource("CircleShape2D_u5cly")
+
+[node name="point4" type="Area2D" parent="points"]
+position = Vector2(-30, -11)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="points/point4"]
+shape = SubResource("CircleShape2D_u5cly")
+
+[node name="point5" type="Area2D" parent="points"]
+position = Vector2(-30, 11)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="points/point5"]
+shape = SubResource("CircleShape2D_u5cly")
+
+[node name="point6" type="Area2D" parent="points"]
+position = Vector2(-17, 28)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="points/point6"]
+shape = SubResource("CircleShape2D_u5cly")
+
+[node name="point7" type="Area2D" parent="points"]
+position = Vector2(18, 29)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="points/point7"]
+shape = SubResource("CircleShape2D_u5cly")
+
+[node name="point8" type="Area2D" parent="points"]
+position = Vector2(30, 12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="points/point8"]
+shape = SubResource("CircleShape2D_u5cly")
 
 [connection signal="animation_finished" from="CharacterBody2D/fire" to="CharacterBody2D/fire" method="_on_animation_finished"]

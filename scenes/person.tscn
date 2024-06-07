@@ -1,4 +1,28 @@
-[gd_scene format=3 uid="uid://j8hxx15fcued"]
+[gd_scene load_steps=12 format=3 uid="uid://j8hxx15fcued"]
+
+[ext_resource type="Script" path="res://scenes/person.gd" id="1_pi2fi"]
+[ext_resource type="LabelSettings" uid="uid://c7sdhronqdi0j" path="res://label_settings/base.tres" id="1_pkkma"]
+[ext_resource type="FontFile" uid="uid://b5taytemoi3i6" path="res://res/fonts/KodeMono-Regular.ttf" id="2_jqgdy"]
+[ext_resource type="Texture2D" uid="uid://wfx67gg6e8iu" path="res://res/textures/rocket.png" id="3_cisw0"]
+[ext_resource type="Texture2D" uid="uid://bw57tvysowyvb" path="res://res/textures/weapon1_idle — копия.png" id="4_7xia5"]
+[ext_resource type="Texture2D" uid="uid://ddntwnj0bvx4" path="res://res/textures/arrow.png" id="5_2746i"]
+
+[sub_resource type="Theme" id="Theme_jw7qi"]
+default_font = ExtResource("2_jqgdy")
+default_font_size = 53
+Button/colors/icon_normal_color = Color(0.121569, 0.168627, 0.411765, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8u7ha"]
+bg_color = Color(0.121569, 0.168627, 0.411765, 1)
+
+[sub_resource type="InputEventKey" id="InputEventKey_eljaf"]
+pressed = true
+keycode = 4194309
+
+[sub_resource type="Shortcut" id="Shortcut_lvxjr"]
+events = [SubResource("InputEventKey_eljaf")]
+
+[sub_resource type="ImageTexture" id="ImageTexture_rne7p"]
 
 [node name="Person" type="Control"]
 layout_mode = 3
@@ -7,6 +31,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_pi2fi")
 
 [node name="background" type="ColorRect" parent="."]
 z_index = -2
@@ -17,3 +42,170 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.054902, 0.0862745, 0.243137, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 197.0
+offset_top = 112.0
+offset_right = 550.0
+offset_bottom = 180.0
+pivot_offset = Vector2(176, 34)
+text = "выберите скин"
+label_settings = ExtResource("1_pkkma")
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -617.0
+offset_top = 112.0
+offset_right = -197.0
+offset_bottom = 180.0
+grow_horizontal = 0
+text = "выберите оружие"
+label_settings = ExtResource("1_pkkma")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -45.0
+offset_right = 150.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(150, 0)
+theme = SubResource("Theme_jw7qi")
+theme_override_colors/icon_normal_color = Color(0.121569, 0.168627, 0.411765, 1)
+theme_override_colors/icon_pressed_color = Color(0.121569, 0.168627, 0.411765, 1)
+theme_override_colors/icon_hover_color = Color(0.121569, 0.168627, 0.411765, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.121569, 0.168627, 0.411765, 1)
+theme_override_colors/icon_focus_color = Color(0.121569, 0.168627, 0.411765, 1)
+theme_override_colors/icon_disabled_color = Color(0.121569, 0.168627, 0.411765, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_8u7ha")
+shortcut = SubResource("Shortcut_lvxjr")
+text = "запуск"
+icon = SubResource("ImageTexture_rne7p")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -729.0
+offset_top = -241.0
+offset_right = -450.0
+offset_bottom = 126.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(139, 183)
+texture = ExtResource("3_cisw0")
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 187.0
+offset_top = 722.0
+offset_right = 540.0
+offset_bottom = 790.0
+pivot_offset = Vector2(176, 34)
+text = "рокета NASA"
+label_settings = ExtResource("1_pkkma")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="arrowLeft" type="Button" parent="Label4"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -73.0
+offset_top = -33.5
+offset_right = -20.0
+offset_bottom = 33.5
+grow_vertical = 2
+icon = ExtResource("5_2746i")
+flat = true
+
+[node name="arrowRight" type="Button" parent="Label4"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 65.0
+offset_top = -37.5
+offset_right = 126.0
+offset_bottom = 37.5
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(-1, 1)
+icon = ExtResource("5_2746i")
+flat = true
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1349.0
+offset_top = 722.0
+offset_right = 1702.0
+offset_bottom = 790.0
+pivot_offset = Vector2(176, 34)
+text = "рокета NASA"
+label_settings = ExtResource("1_pkkma")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="arrowLeft" type="Button" parent="Label3"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -73.0
+offset_top = -33.5
+offset_right = -20.0
+offset_bottom = 33.5
+grow_vertical = 2
+icon = ExtResource("5_2746i")
+flat = true
+
+[node name="arrowRight" type="Button" parent="Label3"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 65.0
+offset_top = -37.5
+offset_right = 126.0
+offset_bottom = 37.5
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(-1, 1)
+icon = ExtResource("5_2746i")
+flat = true
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 405.0
+offset_top = -278.0
+offset_right = 684.001
+offset_bottom = 89.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(139, 183)
+texture = ExtResource("4_7xia5")
+
+[connection signal="button_up" from="Button" to="." method="_on_start_button_up"]
