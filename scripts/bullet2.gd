@@ -22,3 +22,6 @@ func collide():
 	timer.set_wait_time(1)
 	timer.start()
 	$Bullet1.play("end")
+	
+func attacking(hp):
+	collide()

@@ -3,6 +3,8 @@ extends CharacterBody2D
 var speed = 0
 @export
 var _speed = 0
+var HP = 200
+var maxHP = 200
 
 var maxSpeed = 14
 var attack = 1./500.
@@ -11,6 +13,14 @@ var attack = 1./500.
 func _ready():
 	pass # Replace with function body.
 
+func die():
+	pass
+
+
+func attacking(hp):
+	HP -= hp
+	if HP <= 0:
+		die()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

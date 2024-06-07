@@ -10,3 +10,6 @@ func _process(_delta):
 
 func collide():
 	queue_free()
+
+func attacking(hp):
+	collide()

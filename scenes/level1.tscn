@@ -1,12 +1,12 @@
 [gd_scene load_steps=5 format=3 uid="uid://dp5krt0wujruy"]
 
 [ext_resource type="PackedScene" uid="uid://04xwpohl7abm" path="res://scenes/player.tscn" id="1_8xyob"]
-[ext_resource type="Script" path="res://scripts/main.gd" id="1_p0y57"]
+[ext_resource type="Script" path="res://scripts/level1.gd" id="1_gpbfq"]
 [ext_resource type="PackedScene" uid="uid://e8kpp0vqpfnb" path="res://scenes/weapon_1.tscn" id="3_levfo"]
 [ext_resource type="PackedScene" uid="uid://ciswsg5ui4qbc" path="res://scenes/moon1.tscn" id="3_mxunh"]
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_p0y57")
+script = ExtResource("1_gpbfq")
 
 [node name="player" parent="." instance=ExtResource("1_8xyob")]
 z_index = 1

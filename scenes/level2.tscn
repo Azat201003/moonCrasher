@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=3 uid="uid://dc2dte3v5r2qi"]
+
+[ext_resource type="Script" path="res://scripts/level2.gd" id="1_qi4ct"]
+[ext_resource type="PackedScene" uid="uid://04xwpohl7abm" path="res://scenes/player.tscn" id="2_2wd3c"]
+[ext_resource type="PackedScene" uid="uid://e8kpp0vqpfnb" path="res://scenes/weapon_1.tscn" id="3_rux1r"]
+[ext_resource type="PackedScene" uid="uid://ciswsg5ui4qbc" path="res://scenes/moon1.tscn" id="4_7da22"]
+[ext_resource type="PackedScene" uid="uid://dwgp8qk11182" path="res://scenes/moon2.tscn" id="5_bgprs"]
+[ext_resource type="PackedScene" uid="uid://dwix76l1qym1i" path="res://scenes/enemy1.tscn" id="6_t512c"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_qi4ct")
+
+[node name="player" parent="." instance=ExtResource("2_2wd3c")]
+z_index = 1
+scale = Vector2(3, 3)
+
+[node name="weapon1" parent="player" instance=ExtResource("3_rux1r")]
+
+[node name="moon1" parent="." instance=ExtResource("4_7da22")]
+position = Vector2(569, 44)
+
+[node name="moon2" parent="." instance=ExtResource("4_7da22")]
+position = Vector2(-777, 471)
+
+[node name="moon3" parent="." instance=ExtResource("5_bgprs")]
+position = Vector2(-721, -296)
+
+[node name="moon4" parent="." instance=ExtResource("5_bgprs")]
+position = Vector2(140, 648)
+
+[node name="moon5" parent="." instance=ExtResource("5_bgprs")]
+position = Vector2(29, -753)
+
+[node name="Enemy" parent="." instance=ExtResource("6_t512c")]
+position = Vector2(-215, -241)
+scale = Vector2(3, 3)
+
+[node name="Enemy2" parent="." instance=ExtResource("6_t512c")]
+position = Vector2(-695, 95)
+scale = Vector2(3, 3)
+
+[node name="Enemy3" parent="." instance=ExtResource("6_t512c")]
+position = Vector2(-343, 397)
+scale = Vector2(3, 3)
+
+[node name="Enemy4" parent="." instance=ExtResource("6_t512c")]
+position = Vector2(335, -325)
+scale = Vector2(3, 3)
+
+[node name="Enemy5" parent="." instance=ExtResource("6_t512c")]
+position = Vector2(-28, 217)
+scale = Vector2(3, 3)
+
+[node name="Enemy6" parent="." instance=ExtResource("6_t512c")]
+position = Vector2(172, 132)
+scale = Vector2(3, 3)
+
+[node name="Enemy7" parent="." instance=ExtResource("6_t512c")]
+position = Vector2(-306, 8)
+scale = Vector2(3, 3)
+
+[node name="bullets" type="Node2D" parent="."]
