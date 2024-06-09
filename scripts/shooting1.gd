@@ -25,7 +25,10 @@ func shoot():
 	indexSpawn %= len(bulletSpawns)
 	isRechange = false
 	timer.stop()
-
+	var soundShoot = randf_range(2.6, 2.7)
+	$AudioStreamPlayer.set_pitch_scale(soundShoot)
+	$AudioStreamPlayer.play()
+	
 func idleAnim():
 	$AnimatedSprite2D.play("idle")
 	timer.disconnect("timeout", idleAnim)

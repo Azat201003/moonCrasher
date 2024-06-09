@@ -1,11 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://vg4bnygm7hib"]
+[gd_scene load_steps=14 format=3 uid="uid://vg4bnygm7hib"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_8q5jk"]
 [ext_resource type="Texture2D" uid="uid://wfx67gg6e8iu" path="res://res/textures/rocket.png" id="1_s6yeg"]
 [ext_resource type="Texture2D" uid="uid://bh6nrjsoia74r" path="res://res/textures/fireIdle — копия.png" id="2_wvtoj"]
 [ext_resource type="Texture2D" uid="uid://dnbs7gtnp3doq" path="res://res/textures/moon1 — копия.png" id="3_6vhae"]
 [ext_resource type="FontFile" uid="uid://dpvca5mkldnsv" path="res://res/fonts/Oswald-Bold.ttf" id="4_34aod"]
-[ext_resource type="Theme" uid="uid://dj1ro8ijtdkek" path="res://label_settings/button2.tres" id="6_x1nra"]
+[ext_resource type="Theme" path="res://label_settings/button2.tres" id="6_x1nra"]
+[ext_resource type="AudioStream" uid="uid://bi02byuvdsn4j" path="res://res/sounds/select.mp3" id="8_f7yrk"]
 [ext_resource type="LabelSettings" uid="uid://waugqpyi7hj7" path="res://label_settings/bigsett.tres" id="10_0baec"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_p7xwf"]
@@ -243,6 +244,12 @@ libraries = {
 }
 autoplay = "rocket"
 speed_scale = 0.01
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_f7yrk")
+volume_db = -17.0
+pitch_scale = 1.3
+bus = &"Select"
 
 [connection signal="button_up" from="Label2" to="." method="_on_label_2_button_up"]
 [connection signal="button_up" from="Label3" to="." method="_on_label_3_button_up"]

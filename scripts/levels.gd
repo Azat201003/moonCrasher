@@ -26,7 +26,9 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_just_released("ui_select"):
-		get_tree().change_scene_to_file(levelsByName[$levelName.text])
+		$AudioStreamPlayer.play()
+		if $AudioStreamPlayer.finished:
+			get_tree().change_scene_to_file(levelsByName[$levelName.text])
 		
 	if Input.is_action_just_released("ui_right"):
 		levelIndex += 1

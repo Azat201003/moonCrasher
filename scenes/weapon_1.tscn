@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://e8kpp0vqpfnb"]
+[gd_scene load_steps=12 format=3 uid="uid://e8kpp0vqpfnb"]
 
 [ext_resource type="Texture2D" uid="uid://pvujhvrhna02" path="res://res/textures/weapon1_shooting.png" id="1_lbkp1"]
 [ext_resource type="Script" path="res://scripts/shooting1.gd" id="1_wpvrw"]
 [ext_resource type="Texture2D" uid="uid://bpxh007p745be" path="res://res/textures/weapon1_idle.png" id="2_u0hfk"]
+[ext_resource type="AudioStream" uid="uid://dulbef2hffy0e" path="res://res/sounds/test.mp3" id="4_k5616"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_37ug4"]
 atlas = ExtResource("1_lbkp1")
@@ -75,3 +76,7 @@ position = Vector2(6, -8)
 
 [node name="startBullet2" type="Node2D" parent="."]
 position = Vector2(-6, -8)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_k5616")
+bus = &"Shoot"

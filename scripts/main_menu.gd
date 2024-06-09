@@ -31,14 +31,16 @@ func _process(delta):
 		indexbutton %= countbuttons
 	
 	if Input.is_action_just_released("ui_select"):
-		if indexbutton == 0:
-			get_tree().change_scene_to_file("scenes/levels.tscn")
-		if indexbutton == 1:
-			get_tree().change_scene_to_file("scenes/person.tscn")
-		if indexbutton == 2:
-			get_tree().change_scene_to_file("scenes/settings.tscn")
-		if indexbutton == 3:
-			get_tree().quit()
+		$AudioStreamPlayer.play()
+		if $AudioStreamPlayer.finished:
+			if indexbutton == 0:
+				get_tree().change_scene_to_file("scenes/levels.tscn")
+			if indexbutton == 1:
+				get_tree().change_scene_to_file("scenes/person.tscn")
+			if indexbutton == 2:
+				get_tree().change_scene_to_file("scenes/settings.tscn")
+			if indexbutton == 3:
+				get_tree().quit()
 			
 	for i in range(countbuttons):
 		if i == indexbutton:
