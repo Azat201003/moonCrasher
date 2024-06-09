@@ -4,7 +4,7 @@ extends Control
 var levelsByName = {
 	"Level 1" : "res://scenes/level1.tscn",
 	"Level 2" : "res://scenes/level2.tscn",
-	"Level 3" : "res://scenes/level1.tscn"
+	"Level 3" : "res://scenes/level3.tscn"
 }
 @onready
 var levelsIconsByName = {

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7wkrj8jvccjh"]
+
+[ext_resource type="Script" path="res://scripts/point.gd" id="1_kkoef"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u5cly"]
+radius = 9.05539
+
+[node name="point1" type="Area2D"]
+position = Vector2(30, -10)
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("1_kkoef")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_u5cly")
+
+[connection signal="body_entered" from="." to="." method="_on_enemy_entered"]

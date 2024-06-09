@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://cxs8c1piprpew"]
 
-[ext_resource type="Script" path="res://scenes/enemy2.gd" id="1_hbhdb"]
+[ext_resource type="Script" path="res://scripts/enemy2.gd" id="1_hbhdb"]
 [ext_resource type="Texture2D" uid="uid://buq1hikv8agvh" path="res://res/textures/enemy2_idle_back.png" id="2_nlusx"]
 [ext_resource type="Texture2D" uid="uid://cnd6h2320g7n5" path="res://res/textures/enemy2_idle_front.png" id="3_mxtm2"]
 
@@ -111,7 +111,7 @@ animations = [{
 
 [node name="Enemy" type="Node2D"]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="CharacterBody2D" parent="."]
 script = ExtResource("1_hbhdb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
@@ -120,5 +120,8 @@ shape = SubResource("CapsuleShape2D_hvc8q")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D"]
 position = Vector2(1, 0)
 sprite_frames = SubResource("SpriteFrames_bva2n")
-animation = &"idle_back"
+animation = &"idle_front"
 autoplay = "idle_front"
+
+[node name="startBullet" type="Node2D" parent="StaticBody2D"]
+position = Vector2(10, -4)

@@ -18,7 +18,6 @@ var indexbutton = 0
 func _ready():
 	pass # Replace with function body.
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_just_released("ui_down"):
@@ -31,16 +30,15 @@ func _process(delta):
 		indexbutton %= countbuttons
 	
 	if Input.is_action_just_released("ui_select"):
-		$AudioStreamPlayer.play()
-		if $AudioStreamPlayer.finished:
-			if indexbutton == 0:
-				get_tree().change_scene_to_file("scenes/levels.tscn")
-			if indexbutton == 1:
-				get_tree().change_scene_to_file("scenes/person.tscn")
-			if indexbutton == 2:
-				get_tree().change_scene_to_file("scenes/settings.tscn")
-			if indexbutton == 3:
-				get_tree().quit()
+		
+		if indexbutton == 0:
+			get_tree().change_scene_to_file("scenes/levels.tscn")
+		if indexbutton == 1:
+			get_tree().change_scene_to_file("scenes/person.tscn")
+		if indexbutton == 2:
+			get_tree().change_scene_to_file("scenes/settings.tscn")
+		if indexbutton == 3:
+			get_tree().quit()
 			
 	for i in range(countbuttons):
 		if i == indexbutton:
@@ -52,16 +50,21 @@ func _process(delta):
 
 
 func _on_label_2_button_up():
+	
 	get_tree().change_scene_to_file("scenes/levels.tscn")
 
 
 func _on_label_3_button_up():
+	
 	get_tree().change_scene_to_file("scenes/person.tscn")
 
 
 func _on_label_4_button_up():
+	
 	get_tree().change_scene_to_file("scenes/settings.tscn")
 
 
 func _on_label_5_button_up():
+	
 	get_tree().quit()
+	

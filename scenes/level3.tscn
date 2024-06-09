@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=3 uid="uid://djp22cxoisvrj"]
+
+[ext_resource type="Script" path="res://scripts/level3.gd" id="1_3xqlw"]
+[ext_resource type="PackedScene" uid="uid://04xwpohl7abm" path="res://scenes/player.tscn" id="2_s6ter"]
+[ext_resource type="PackedScene" uid="uid://e8kpp0vqpfnb" path="res://scenes/weapon_1.tscn" id="3_a747w"]
+[ext_resource type="PackedScene" uid="uid://ciswsg5ui4qbc" path="res://scenes/moon1.tscn" id="4_5rt5b"]
+[ext_resource type="PackedScene" uid="uid://dwgp8qk11182" path="res://scenes/moon2.tscn" id="5_lpb8o"]
+[ext_resource type="PackedScene" uid="uid://cxs8c1piprpew" path="res://scenes/enemy2.tscn" id="6_o8oxf"]
+[ext_resource type="AudioStream" uid="uid://bi02byuvdsn4j" path="res://res/sounds/select.mp3" id="7_naycr"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_3xqlw")
+
+[node name="player" parent="." instance=ExtResource("2_s6ter")]
+z_index = 1
+scale = Vector2(3, 3)
+
+[node name="weapon1" parent="player" instance=ExtResource("3_a747w")]
+
+[node name="moon1" parent="." instance=ExtResource("4_5rt5b")]
+position = Vector2(569, 44)
+
+[node name="moon2" parent="." instance=ExtResource("4_5rt5b")]
+position = Vector2(-777, 471)
+
+[node name="moon3" parent="." instance=ExtResource("5_lpb8o")]
+position = Vector2(-721, -296)
+
+[node name="moon4" parent="." instance=ExtResource("5_lpb8o")]
+position = Vector2(140, 648)
+
+[node name="moon5" parent="." instance=ExtResource("5_lpb8o")]
+position = Vector2(29, -753)
+
+[node name="bullets" type="Node2D" parent="."]
+
+[node name="Enemy" parent="." instance=ExtResource("6_o8oxf")]
+position = Vector2(-381, 139)
+scale = Vector2(2, 2)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_naycr")
+volume_db = 24.0
+pitch_scale = 1.3
+autoplay = true

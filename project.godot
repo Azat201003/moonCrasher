@@ -14,6 +14,7 @@ config/name="moonCrasher"
 run/main_scene="res://scenes/main_menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 boot_splash/show_image=false
+boot_splash/image="res://res/textures/rocket.png"
 
 [display]
 
@@ -73,6 +74,7 @@ ui_shooting={
 
 2d_physics/layer_2="player"
 2d_physics/layer_3="bullet"
+2d_physics/layer_4="enemy"
 
 [rendering]
 

@@ -1,11 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://j8hxx15fcued"]
+[gd_scene load_steps=13 format=3 uid="uid://j8hxx15fcued"]
 
-[ext_resource type="Script" path="res://scenes/person.gd" id="1_pi2fi"]
+[ext_resource type="Script" path="res://scripts/person.gd" id="1_pi2fi"]
 [ext_resource type="LabelSettings" uid="uid://c7sdhronqdi0j" path="res://label_settings/base.tres" id="1_pkkma"]
 [ext_resource type="FontFile" uid="uid://b5taytemoi3i6" path="res://res/fonts/KodeMono-Regular.ttf" id="2_jqgdy"]
 [ext_resource type="Texture2D" uid="uid://wfx67gg6e8iu" path="res://res/textures/rocket.png" id="3_cisw0"]
 [ext_resource type="Texture2D" uid="uid://bw57tvysowyvb" path="res://res/textures/weapon1_idle — копия.png" id="4_7xia5"]
 [ext_resource type="Texture2D" uid="uid://ddntwnj0bvx4" path="res://res/textures/arrow.png" id="5_2746i"]
+[ext_resource type="AudioStream" uid="uid://bi02byuvdsn4j" path="res://res/sounds/select.mp3" id="7_rl3ee"]
 
 [sub_resource type="Theme" id="Theme_jw7qi"]
 default_font = ExtResource("2_jqgdy")
@@ -207,5 +208,11 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(139, 183)
 texture = ExtResource("4_7xia5")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_rl3ee")
+volume_db = 24.0
+pitch_scale = 1.3
+autoplay = true
 
 [connection signal="button_up" from="Button" to="." method="_on_start_button_up"]
