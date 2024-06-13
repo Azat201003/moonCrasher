@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bh6nrjsoia74r" path="res://res/textures/fireIdle — копия.png" id="2_wvtoj"]
 [ext_resource type="Texture2D" uid="uid://dnbs7gtnp3doq" path="res://res/textures/moon1 — копия.png" id="3_6vhae"]
 [ext_resource type="FontFile" uid="uid://dpvca5mkldnsv" path="res://res/fonts/Oswald-Bold.ttf" id="4_34aod"]
-[ext_resource type="Theme" path="res://label_settings/button2.tres" id="6_x1nra"]
+[ext_resource type="Theme" uid="uid://dj1ro8ijtdkek" path="res://label_settings/button2.tres" id="6_x1nra"]
 [ext_resource type="LabelSettings" uid="uid://waugqpyi7hj7" path="res://label_settings/bigsett.tres" id="10_0baec"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_p7xwf"]

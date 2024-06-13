@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends CharacterBody2D
 
 var goto = null
 var shooting = false
@@ -7,35 +7,23 @@ var isRechange = false
 var bulletScene
 var bulletSpawn
 const bulletSpeed = 20
+const speed = 100
 
 var nowIdle = "idle_front"
 
 func get_nearest_point():	
-	var points = get_parent().get_parent().get_node("player").get_node("points").get_children()
+	var points = get_parent().get_parent().get_node("player").get_child(0).get_node("points").get_children()
 	
 	var _point = points[0]
 	for i in points:
-		if not i.isBusy:
+		if i.isBusy != null:
 			if i.global_position.distance_to(global_position) < _point.global_position.distance_to(global_position):
 				_point = i
 	
 	_point.isBusy = true
 	_point.busy = self
 	
-	if _point == points[0] or _point == points[4]:
-		nowIdle = "idle_front"
-		scale.x = -1
-	if _point == points[5] or _point == points[3]:
-		nowIdle = "idle_front"
-		scale.x = 1
-	if _point == points[7] or _point == points[1]:
-		nowIdle = "idle_back"
-		scale.x = 1
-	if _point == points[2] or _point == points[6]:
-		nowIdle = "idle_back"
-		scale.x = -1
-		
-	
+	print(_point)
 	return _point
 
 # Called when the node enters the scene tree for the first time.
@@ -60,6 +48,9 @@ func moveTo(pos):
 	var dist = global_position.distance_to(pos)
 	var x = (pos.x - global_position.x) / dist
 	var y = (pos.y - global_position.y) / dist
+	velocity.x = x * speed
+	velocity.y = y * speed
+	move_and_slide()
 	
 func stay_in_area():
 	shooting = true
@@ -72,17 +63,41 @@ func _process(delta):
 		
 	elif not shooting:
 		moveTo(goto.global_position)
+		$AnimatedSprite2D.animation = nowIdle
 		
-	if shooting and not isRechange:
+	if shooting:
+		var player = get_parent().get_parent().get_node("player").get_child(0)
+		if player.global_position.x < global_position.x:
+			scale.x = -1
+		if player.global_position.x > global_position.x:
+			scale.x = 1
+		if player.global_position.y < global_position.y:
+			nowIdle = "idle_back"
+		if player.global_position.y > global_position.y:
+			nowIdle = "idle_front"
+	
+	if shooting and !isRechange:
 		timer.set_wait_time(0.2)
 		timer.start()
 		isRechange = true
 		
 	if goto != null:
-		if global_position.distance_to(goto.global_position):
+		if global_position.distance_to(goto.global_position) > 100:
 			timer.connect("timeout", idleAnim)
+	
+		if !shooting:
+			if goto.global_position.x < global_position.x and scale.x == 1:
+				scale.x = -1
+			if goto.global_position.x > global_position.x and scale.x == 1:
+				scale.x = 1
+			if goto.global_position.y < global_position.y:
+				nowIdle = "idle_back"
+			if goto.global_position.y > global_position.y:
+				nowIdle = "idle_front"
 		
 
 func idleAnim():
+	goto.busy = false
+	goto = null
 	$AnimatedSprite2D.play(nowIdle)
 	timer.disconnect("timeout", idleAnim)

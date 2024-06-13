@@ -158,7 +158,6 @@ stream = ExtResource("6_2u3y2")
 volume_db = -7.0
 pitch_scale = 1.3
 autoplay = true
-bus = &"Select"
 
 [connection signal="button_up" from="levelName/arrowLeft" to="." method="_on_arrow_left_button_up"]
 [connection signal="button_up" from="levelName/arrowRight" to="." method="_on_arrow_right_button_up"]

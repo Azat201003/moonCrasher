@@ -31,4 +31,3 @@ stream = ExtResource("5_gx4un")
 volume_db = -7.0
 pitch_scale = 1.3
 autoplay = true
-bus = &"Select"
