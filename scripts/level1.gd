@@ -15,7 +15,7 @@ func countMoons():
 	return numMoons
 
 func happyEnd():
-	queue_free()
+	get_tree().change_scene_to_file("scenes/levels.tscn")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
