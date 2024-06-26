@@ -1,0 +1,126 @@
+[gd_scene load_steps=6 format=3 uid="uid://dgoqi6j3d15q1"]
+
+[ext_resource type="Script" path="res://scenes/new_menu.gd" id="1_4b1b6"]
+[ext_resource type="Texture2D" uid="uid://bxnkquwwsouk0" path="res://res/textures/menuBackground.png" id="1_b0qdb"]
+[ext_resource type="Texture2D" uid="uid://dil5e3ti44gnl" path="res://res/textures/menuAsteroids.png" id="2_sd60v"]
+[ext_resource type="LabelSettings" uid="uid://4k6khlud8vty" path="res://label_settings/fontBasic.tres" id="3_t5ocm"]
+[ext_resource type="LabelSettings" uid="uid://dwjqrwjd6fary" path="res://label_settings/fontTitle.tres" id="4_am47i"]
+
+[node name="NewMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4b1b6")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.502
+anchor_right = 0.5
+anchor_bottom = 0.502
+offset_left = -1018.0
+offset_top = -580.16
+offset_right = 1046.0
+offset_bottom = 580.84
+texture = ExtResource("1_b0qdb")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Asteroids" type="TextureRect" parent="."]
+texture_filter = 1
+texture_repeat = 2
+layout_mode = 0
+offset_left = -58.0
+offset_top = -38.0
+offset_right = 2005.0
+offset_bottom = 1120.0
+texture = ExtResource("2_sd60v")
+stretch_mode = 4
+
+[node name="Label5" type="Label" parent="."]
+layout_mode = 0
+offset_left = 552.0
+offset_top = 64.0
+offset_right = 1426.0
+offset_bottom = 211.0
+text = "MoonCrasher"
+label_settings = ExtResource("4_am47i")
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.377
+anchor_top = 0.662
+anchor_right = 0.615
+anchor_bottom = 0.748
+offset_left = -0.840027
+offset_top = 1.03992
+offset_right = -0.800049
+offset_bottom = 0.159973
+grow_horizontal = 2
+grow_vertical = 2
+text = "Свободная игра"
+label_settings = ExtResource("3_t5ocm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.377
+anchor_top = 0.748
+anchor_right = 0.615
+anchor_bottom = 0.833
+offset_left = -0.840027
+offset_top = 0.159973
+offset_right = -0.800049
+offset_bottom = 0.359924
+grow_horizontal = 2
+grow_vertical = 2
+text = "Опции"
+label_settings = ExtResource("3_t5ocm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="."]
+layout_direction = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.377
+anchor_top = 0.833
+anchor_right = 0.615
+anchor_bottom = 0.919
+offset_left = -0.840027
+offset_top = 0.359924
+offset_right = -0.800049
+offset_bottom = -0.52002
+grow_horizontal = 2
+grow_vertical = 2
+text = "Выйти"
+label_settings = ExtResource("3_t5ocm")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Label1" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.377
+anchor_top = 0.577
+anchor_right = 0.615
+anchor_bottom = 0.662
+offset_left = -0.840027
+offset_top = -0.160034
+offset_right = -0.800049
+offset_bottom = 0.039917
+grow_horizontal = 2
+grow_vertical = 2
+text = "Уровни"
+label_settings = ExtResource("3_t5ocm")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/mouse_over = Color(0.66074, 0.708331, 0.73953, 1)
+metadata/mouse_out = Color(0.658824, 0.709804, 0.741176, 1)

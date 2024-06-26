@@ -20,7 +20,8 @@ boot_splash/image="res://res/textures/rocket.png"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/mode=2
+window/size/mode=1
+window/size/resizable=false
 
 [input]
 

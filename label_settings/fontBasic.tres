@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://4k6khlud8vty"]
+
+[ext_resource type="FontFile" uid="uid://dwvcjq5ymbq5t" path="res://res/fonts/Orbitron.ttf" id="1_bbkn4"]
+
+[resource]
+font = ExtResource("1_bbkn4")
+font_size = 62
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
