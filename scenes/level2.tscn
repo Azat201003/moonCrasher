@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://e8kpp0vqpfnb" path="res://scenes/weapon_1.tscn" id="3_rux1r"]
 [ext_resource type="PackedScene" uid="uid://ciswsg5ui4qbc" path="res://scenes/moon1.tscn" id="4_7da22"]
 [ext_resource type="PackedScene" uid="uid://dwgp8qk11182" path="res://scenes/moon2.tscn" id="5_bgprs"]
-[ext_resource type="PackedScene" path="res://scenes/enemy1.tscn" id="6_t512c"]
+[ext_resource type="PackedScene" uid="uid://dwix76l1qym1i" path="res://scenes/enemy1.tscn" id="6_t512c"]
 [ext_resource type="AudioStream" uid="uid://bi02byuvdsn4j" path="res://res/sounds/select.mp3" id="7_oq5ik"]
 
 [node name="Node2D" type="Node2D"]

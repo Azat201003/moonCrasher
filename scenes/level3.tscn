@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/level3.gd" id="1_3xqlw"]
 [ext_resource type="PackedScene" uid="uid://04xwpohl7abm" path="res://scenes/player.tscn" id="2_s6ter"]
-[ext_resource type="PackedScene" uid="uid://e8kpp0vqpfnb" path="res://scenes/weapon_1.tscn" id="3_a747w"]
+[ext_resource type="PackedScene" uid="uid://2vt7y5yu8jxx" path="res://scenes/weapon_2.tscn" id="3_3uhtu"]
 [ext_resource type="PackedScene" uid="uid://ciswsg5ui4qbc" path="res://scenes/moon1.tscn" id="4_5rt5b"]
 [ext_resource type="PackedScene" uid="uid://dwgp8qk11182" path="res://scenes/moon2.tscn" id="5_lpb8o"]
 [ext_resource type="PackedScene" uid="uid://cxs8c1piprpew" path="res://scenes/enemy2.tscn" id="6_o8oxf"]
@@ -15,7 +15,7 @@ script = ExtResource("1_3xqlw")
 z_index = 1
 scale = Vector2(3, 3)
 
-[node name="weapon1" parent="player" instance=ExtResource("3_a747w")]
+[node name="weapon2" parent="player" instance=ExtResource("3_3uhtu")]
 
 [node name="moon1" parent="." instance=ExtResource("4_5rt5b")]
 position = Vector2(569, 44)

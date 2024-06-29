@@ -112,6 +112,8 @@ animations = [{
 [node name="Enemy" type="Node2D"]
 
 [node name="StaticBody2D" type="CharacterBody2D" parent="."]
+collision_layer = 8
+collision_mask = 8
 script = ExtResource("1_hbhdb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]

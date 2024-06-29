@@ -67,3 +67,16 @@ func _process(delta):
 	##
 	##get_tree().quit()
 	##
+
+
+
+func _on_подтвердить_button_up():
+	if $selected.selected == 0:
+		get_tree().change_scene_to_file("res://scenes/levels.tscn")
+	if $selected.selected == 1:
+		get_tree().change_scene_to_file("res://scenes/person.tscn")
+	if $selected.selected == 2:
+		get_tree().change_scene_to_file("res://scenes/settings.tscn")
+	if $selected.selected == 3:
+		get_tree().quit()
+		

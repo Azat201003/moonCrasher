@@ -1,9 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://dgoqi6j3d15q1"]
+[gd_scene load_steps=9 format=3 uid="uid://bgnsipqmhr47t"]
 
 [ext_resource type="Texture2D" uid="uid://bxnkquwwsouk0" path="res://res/textures/menuBackground.png" id="1_b0qdb"]
+[ext_resource type="Script" path="res://scripts/new_menu.gd" id="1_l7yth"]
 [ext_resource type="Texture2D" uid="uid://dil5e3ti44gnl" path="res://res/textures/menuAsteroids.png" id="2_sd60v"]
-[ext_resource type="LabelSettings" uid="uid://dwjqrwjd6fary" path="res://label_settings/fontTitle.tres" id="4_am47i"]
-[ext_resource type="Script" path="res://scripts/RichTextLabel.gd" id="4_iji8e"]
+[ext_resource type="LabelSettings" path="res://label_settings/fontTitle.tres" id="4_am47i"]
+[ext_resource type="Theme" uid="uid://e30w0v38wbdo" path="res://label_settings/opinion_button.tres" id="4_fudsl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rsu36"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wmi7f"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ue343"]
 
 [node name="NewMenu" type="Control"]
 layout_mode = 3
@@ -12,6 +21,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_l7yth")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
@@ -48,11 +58,32 @@ offset_bottom = 211.0
 text = "MoonCrasher"
 label_settings = ExtResource("4_am47i")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="selected" type="OptionButton" parent="."]
 layout_mode = 0
-offset_right = 209.0
-offset_bottom = 91.0
-bbcode_enabled = true
-text = "[center]Уровни
-"
-script = ExtResource("4_iji8e")
+offset_right = 173.0
+offset_bottom = 43.0
+theme = ExtResource("4_fudsl")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rsu36")
+flat = true
+item_count = 4
+selected = 0
+popup/item_0/text = "Уровни"
+popup/item_0/id = 0
+popup/item_1/text = "Свободная игра"
+popup/item_1/id = 1
+popup/item_2/text = "Насройки"
+popup/item_2/id = 2
+popup/item_3/text = "Выйти"
+popup/item_3/id = 3
+
+[node name="подтвердить" type="Button" parent="."]
+layout_mode = 0
+offset_left = 204.0
+offset_right = 377.0
+offset_bottom = 43.0
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wmi7f")
+theme_override_styles/focus = SubResource("StyleBoxTexture_ue343")
+text = "подтвердить"
+flat = true
+
+[connection signal="button_up" from="подтвердить" to="." method="_on_подтвердить_button_up"]

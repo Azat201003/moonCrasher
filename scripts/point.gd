@@ -1,6 +1,5 @@
 extends Area2D
 
-var isBusy = false
 var busy = null
 
 # Called when the node enters the scene tree for the first time.
@@ -15,4 +14,4 @@ func _process(delta):
 
 func _on_enemy_entered(body):
 	if busy != null:
-		busy.stay_in_area()
+		body.stay_in_area()
